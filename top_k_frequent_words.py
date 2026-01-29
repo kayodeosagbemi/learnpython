@@ -15,8 +15,6 @@ class Solution:
         sorted_values=sorted(histogram.values(), reverse=True)
         print("DEBUGGING>> ... Printing the sorted histogram....")
         print(sorted_values)
-        #creating a new dictionary that will contain the histogram counts as a key
-        #and a list of words for the words of that frequency
         final_dict=dict()
         for sorted_value in sorted_values:
             print("\tDebugging>> In Outer Loop")
@@ -33,19 +31,9 @@ class Solution:
             
             print("\t\t\tDebugging>> Ending Inner Loop")
             print(f"Final Dict is {final_dict}")
-            #final_dict[sorted_value]= sorted(final_dict[sorted_value])
         
         print("\tDebugging>> Ending Outer Loop")
-        #create a final output list
         output_list = list(final_dict.values())
-        # for count, word_list in final_dict.items():
-        #     if word_list is None:
-        #         print("word list is NULL o!")
-        #     else:
-        #         output_list.extend(word_list)
-
-        
-
         return output_list[0: k]
 
     
