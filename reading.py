@@ -20,6 +20,9 @@ class Reading:
     def getPulse(self)->int:
         return self.pulse
     
+    def __lt__(self, other: "Reading")->bool:
+        return self.getSystolic() < other.getSystolic()
+    
     def __str__(self):
         return f"SYSTOLIC: \t{self.getSystolic()}\nDIASTOLIC:\t{self.getDiastolic()}\nPULSE:\t{self.getPulse()}"
     

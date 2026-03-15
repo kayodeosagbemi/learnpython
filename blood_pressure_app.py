@@ -1,5 +1,6 @@
 from reading import Reading
 print("Welcome to the blood pressure reading application")
+reading_dict={}
 while True:
     systolic = int(input("Enter your systolic "))
     diastolic = int(input("Enter your diastolic "))
@@ -14,7 +15,7 @@ while True:
     option = input("\n\nDo you want to save this reading? Y for yes and N for No ")
     should_save = False
     save_key = "" 
-    reading_dict={}
+    
     match option:
         case "y"| "Y"| "yes"| "yeah":
             should_save = True
@@ -41,6 +42,15 @@ while True:
 
     
     if not should_continue:
+        # Print out all the saved readings
+        for k, v in reading_dict.items():
+            print(f"Key: {k}\nValue: {v}")
+
+        print("Printing out the list of readings sorted by their systolics")
+        readings_list = list(reading_dict.values())
+        readings_list.sort()
+        for v in readings_list:
+            print(v)
         break
         
 
